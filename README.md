@@ -4,7 +4,7 @@ A minimal, zero-permission Chrome Manifest V3 extension to prevent accidental ta
 
 ## Why This Exists
 
-Other extensions (such as *More Better Ctrl-W*) implement `close-highlighted-windows` by calling:
+Other extensions (such as *Better Ctrl-W* / *More Better Ctrl-W* — see [thalesmello/better-ctrlw#5](https://github.com/thalesmello/better-ctrlw/issues/5)) implement `close-highlighted-windows` by calling:
 
 ```javascript
 chrome.tabs.query({ highlighted: true, currentWindow: true }, ...);
