@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Wayland-Safe Ctrl+W",
+  "version": "1.0.0",
+  "description": "Swallow Ctrl+W and close highlighted tabs in the focused window on Wayland tiling compositors (Niri, Sway, Hyprland).",
+  "icons": {
+    "128": "icons/128.png"
+  },
+  "incognito": "spanning",
+  "permissions": [],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "close-highlighted-tabs": {
+      "description": "Close highlighted tabs in the focused window",
+      "suggested_key": {
+        "default": "Ctrl+Shift+W"
+      }
+    },
+    "do-nothing": {
+      "description": "Do absolutely nothing (intercept Ctrl+W)",
+      "suggested_key": {
+        "default": "Ctrl+W"
+      }
+    }
+  }
+}
