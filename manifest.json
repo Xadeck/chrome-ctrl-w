@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Wayland-Safe Ctrl+W",
-  "version": "1.0.0",
-  "description": "Swallow Ctrl+W and close highlighted tabs in the focused window on Wayland tiling compositors (Niri, Sway, Hyprland).",
+  "name": "Wayland-Safe Tab Shortcuts",
+  "version": "1.1.0",
+  "description": "Wayland-safe shortcuts to swallow Ctrl+W, close highlighted tabs, duplicate tabs, and move tabs to a new window.",
   "icons": {
     "128": "icons/128.png"
   },
@@ -13,17 +13,37 @@
     "type": "module"
   },
   "commands": {
+    "do-nothing": {
+      "description": "Do absolutely nothing (intercept Ctrl+W)",
+      "suggested_key": {
+        "default": "Ctrl+W"
+      }
+    },
     "close-highlighted-tabs": {
       "description": "Close highlighted tabs in the focused window",
       "suggested_key": {
         "default": "Ctrl+Shift+W"
       }
     },
-    "do-nothing": {
-      "description": "Do absolutely nothing (intercept Ctrl+W)",
+    "duplicate-tab": {
+      "description": "Duplicate highlighted tab(s) in the focused window",
       "suggested_key": {
-        "default": "Ctrl+W"
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
       }
+    },
+    "tab-to-window": {
+      "description": "Move highlighted tab(s) to a new normal window",
+      "suggested_key": {
+        "default": "Alt+X",
+        "linux": "Alt+Shift+X"
+      }
+    },
+    "tab-to-popup": {
+      "description": "Move active tab to a new popup window"
+    },
+    "close-other-tabs": {
+      "description": "Close other unpinned tabs in the focused window"
     }
   }
 }
