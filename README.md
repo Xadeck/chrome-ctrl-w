@@ -4,7 +4,7 @@ A minimal, zero-permission Chrome Manifest V3 extension that replaces three popu
 
 - **More Better Ctrl-W** ([thalesmello/better-ctrlw#5](https://github.com/thalesmello/better-ctrlw/issues/5)): swallow `Ctrl+W`, close highlighted tabs (`Ctrl+Shift+W`), close other unpinned tabs
 - **Duplicate Tab**: duplicate highlighted tab(s) (`Ctrl+Shift+D`)
-- **Tab to Window/Popup**: move highlighted tab(s) to a new normal window (`Alt+Shift+X`) or popup window
+- **Tab to Window/Popup**: move highlighted tab(s) to a new window (`Ctrl+Shift+B`)
 
 ## Commands
 
@@ -13,8 +13,7 @@ A minimal, zero-permission Chrome Manifest V3 extension that replaces three popu
 | `do-nothing` | `Ctrl+W` | Do nothing (intercept accidental `Ctrl+W`) |
 | `close-highlighted-tabs` | `Ctrl+Shift+W` | Close highlighted tab(s) in the focused window |
 | `duplicate-tab` | `Ctrl+Shift+D` | Duplicate highlighted tab(s) in the focused window |
-| `tab-to-window` | `Alt+Shift+X` | Move highlighted tab(s) to a new normal window |
-| `tab-to-popup` | *(Unassigned)* | Move active tab to a new popup window |
+| `tab-to-window` | `Ctrl+Shift+B` | Move highlighted tab(s) to a new window |
 | `close-other-tabs` | *(Unassigned)* | Close other unpinned tabs in the focused window |
 
 All shortcuts can be customized at `chrome://extensions/shortcuts` (keep Scope set to **In Chrome**).

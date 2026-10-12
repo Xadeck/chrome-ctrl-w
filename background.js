@@ -28,7 +28,7 @@ async function getTargetTabs(tab, queryProps = { highlighted: true }) {
   return chrome.tabs.query({ ...queryProps, lastFocusedWindow: true });
 }
 
-async function moveTabsToNewWindow(tab, windowType) {
+async function moveTabsToNewWindow(tab) {
   const tabs = await getTargetTabs(tab, { highlighted: true });
   if (tabs.length === 0) {
     return;
@@ -41,7 +41,7 @@ async function moveTabsToNewWindow(tab, windowType) {
 
   const newWin = await chrome.windows.create({
     tabId: activeTab.id,
-    type: windowType,
+    type: "normal",
     focused: true,
   });
 
@@ -53,7 +53,7 @@ async function moveTabsToNewWindow(tab, windowType) {
     .filter((t) => t.id !== activeTab.id && t.id !== undefined)
     .map((t) => t.id);
 
-  if (otherTabIds.length > 0 && windowType === "normal") {
+  if (otherTabIds.length > 0) {
     await chrome.tabs.move(otherTabIds, { windowId: newWin.id, index: -1 });
     for (const id of otherTabIds) {
       await chrome.tabs.update(id, { highlighted: true });
@@ -86,12 +86,7 @@ chrome.commands.onCommand.addListener(async (command, tab) => {
     }
 
     case "tab-to-window": {
-      await moveTabsToNewWindow(tab, "normal");
-      break;
-    }
-
-    case "tab-to-popup": {
-      await moveTabsToNewWindow(tab, "popup");
+      await moveTabsToNewWindow(tab);
       break;
     }
 

@@ -33,14 +33,11 @@
       }
     },
     "tab-to-window": {
-      "description": "Move highlighted tab(s) to a new normal window",
+      "description": "Move highlighted tab(s) to a new window",
       "suggested_key": {
-        "default": "Alt+X",
-        "linux": "Alt+Shift+X"
+        "default": "Ctrl+Shift+B",
+        "mac": "Command+Shift+B"
       }
-    },
-    "tab-to-popup": {
-      "description": "Move active tab to a new popup window"
     },
     "close-other-tabs": {
       "description": "Close other unpinned tabs in the focused window"
